@@ -6,34 +6,27 @@
     * Description: This file contains the HTML file.
     */
 
-    ?>
+session_start();
+ 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
- 
-        <title>Chatty</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div id="wrapper">
-            <div id="menu">
-                <p class="welcome">Welcome, <b></b></p>
-                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
-            </div>
- 
-            <div id="chatbox"></div>
- 
-            <form name="message" action="">
-                <input name="usermsg" type="text" id="usermsg" />
-                <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
-            </form>
-        </div>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script type="text/javascript">
-            // jQuery Document
-            $(document).ready(function () {});
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatty</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="chatlog">
+        
+    </div>
+    <div id="userinput">
+        <input type="text" id="uname" name="uname" placeholder="Name"></input>
+        <input type="text" id="msg" name="msg" placeholder="Message"></input>
+        <input type="submit">
+    </div>
+</body>
 </html>
