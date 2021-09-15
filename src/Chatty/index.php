@@ -6,9 +6,6 @@
     * Description: This file contains code.
     */
 
-// Initialize the session
-session_start();
-
 // Include config file
 require_once "config.php";
 
@@ -51,15 +48,20 @@ mysqli_close($link);
     <title>Chatty</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
+<body onload="show_func()">
+<div id="container">
 <script>
 
 function show_func(){
  
- var element = document.getElementById("");
+ var element = document.getElementById("chatbox");
     element.scrollTop = element.scrollHeight;
   
+    var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("chatbox").innerHTML = this.responseText;
+                }
  }
 
  </script>
@@ -125,7 +127,7 @@ else
 }
 endwhile;
 ?>
-
+    </div>
     <footer>
 
         <table>
@@ -150,9 +152,6 @@ endwhile;
         </table> 
 
     </footer>
-</form>
-</main>   
-</div>
- 
+</form>  
 </body>
 </html>
