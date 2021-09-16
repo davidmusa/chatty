@@ -8,10 +8,10 @@
 
     // Include config file
     require_once "config.php";
+    require_once "message.php";
 
     // Initialize the session
     session_start();
-
     
 ?>
 
@@ -37,7 +37,7 @@
             <input type="text" name="username"><br><br>
             <label for="message">Message</label>
             <input type="text" name="message"><br><br>
-            <input onclick="get_message()" type="submit" value="Send">
+            <button style="height: 30px; width: 80px;" onclick="get_message()">Send</button>
         </form>
 
         <script>
@@ -45,7 +45,7 @@
         function get_message() {
 
             var loader = '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
-            document.getElementById("message").innerHTML = loader;
+            document.getElementById("chathist").innerHTML = loader;
 
             var q_username = document.getElementById("username");
             var q_message = document.getElementById("message");
@@ -53,7 +53,7 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("message").innerHTML = this.responseText;
+                    document.getElementById("chathist").innerHTML = this.responseText;
                 }
             };
 

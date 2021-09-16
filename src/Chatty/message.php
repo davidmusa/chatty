@@ -1,5 +1,5 @@
 <?php
-$query = "SELECT * FROM chats LIMIT 2000";
+    $query = "SELECT * FROM chats LIMIT 1000";
     $exec = $link->query($query);
 
     $output = "";
@@ -9,4 +9,6 @@ $query = "SELECT * FROM chats LIMIT 2000";
         $time = $row['dt'];
         $output .= "<br><div class='message'>[" . $time . "] " . $username . " > " . $message . "</div>";
     }
+
 ?>
+
