@@ -1,4 +1,4 @@
-    <?php
+<?php
     /*
     * Date: 2021-08-30  
     * Author: David Musa
@@ -19,4 +19,4 @@
     if($link === false){
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
-    ?>
+?>

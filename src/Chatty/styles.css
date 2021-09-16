@@ -10,22 +10,7 @@
     border-radius:5px;
     clear:both;
 }
-#inner_div{
-    padding-left:0;
-    margin:0;
-    list-style-type:none;
-    position:relative;
-    overflow:auto;
-    height:500px;
-    background-image:url(
-https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200911064223/bg.jpg);
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    position: relative;
-    border-top:2px solid #fff;
-    border-bottom:2px solid #fff;
-}
+
 #container{
     width:500px;
     height:700px;
@@ -34,4 +19,11 @@ https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200911064223/bg.jpg);
     font-size:0;
     border-radius:5px;
     overflow:hidden;
+}
+
+#chathist {
+    height: 500px;
+    overflow-y: scroll;
+    border: 2px solid red;
+    padding: 10px;
 }
