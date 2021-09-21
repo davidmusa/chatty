@@ -6,8 +6,12 @@
     *   Description:
     */
 
-    // Initialize the session
-    session_start();
+    //1. INPUT
+    //2. VALIDATE INPUT
+    //3. BUSINESS LOGIC
+    //4. OUTPUT
+
+    
 
     require_once "config.php";
 
@@ -32,21 +36,31 @@
             } else {
              $errors[] = "Please write your name";
             } 
-        } else {
+            } else {
             $errors [] = "You did not submit anything";
-        }
+            }
  
-        if (isset($_POST['msg'])){
+        if (isset($_POST['msg'])) {
             $message = htmlspecialchars($_POST['msg']);
             if (empty($message)) {
-             } else {
+            } else {
                  $errors[] = "Please write your message";
-             }
-        } else {
+            }
+            } else {
             $errors [] = "You did not submit anything";
-        }
-     }
+            }
+    }
    
+    $sql = $link->prepare("INSERT INTO chats (uname, msg, dt) VALUES (?, ?, ?)");
+    $sql->bind_param($username, $message, $time);
+        if (mysqli_query($link, $sql)){
+            ;
+        } else{
+            echo "ERROR: Message not sent!!!";
+        }
+        // Close connection
+        mysqli_close($link); 
+
 ?>
 
        

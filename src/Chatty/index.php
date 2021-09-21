@@ -6,8 +6,10 @@
     * Description: This file contains code.
     */
 
+    // Initialize the session
+    session_start();
+
     // Include config file
-    require_once "config.php";
     require_once "message.php";
     
 ?>
@@ -26,11 +28,7 @@
 
         <div id="chathist">
             <?php
-                $query = "SELECT * FROM chats ORDER BY dt DESC LIMIT 100";
-                $exec = $link->query($query);
-                while ($row = $exec->fetch_array()){
-                    echo $output;
-                }
+                echo $output;
             ?>
         </div>
 
@@ -39,15 +37,16 @@
             <input type="text" name="username"><br><br>
             <label for="message">Message</label>
             <input type="text" name="message"><br><br>
-            <button style="height: 30px; width: 80px;" id="btn">Send</button>
+            <button style="height: 30px; width: 80px;" type="submit" name="submit" id="btn">Send</button>
         </form>
 
         <script>
             $(document).ready(function(){
-                $("btn").click(function(){
-                    $("#chathist").load("message.php");
+                $("#btn").click(function(){
+                    $("chathist").append("<li></li>");
                 });
-            });    
+            });
+ 
         </script>
 
     </body>
